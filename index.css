@@ -1,4 +1,8 @@
 
+textarea {
+	resize: none;
+}
+
 .post-card {
 	width: 1000px;
 	background-color: #eee;
@@ -12,20 +16,24 @@
 	list-style-type: none;
 }
 
+.poster {
+	font-size: 1.5em;
+}
+
 .actions-container {
 	 width: 100%;
 	 height: 30px;
 	 position: relative;
 }
 
-.icon {
-     font-size: 1em;
-     background-color: red;
-}
 
 .edit-post {
 	float: left;
 	margin-right: 7px;
+}
+
+.post-controls {
+	padding-left: 20px;
 }
 
 .placeholder {
@@ -83,7 +91,8 @@ img {
 
 .comment-input {
 	height: 2em;
-	width: 895px;
+	width: 850px;
+	margin-left: 20px;
 }
 
 .comment-submit {
@@ -95,7 +104,20 @@ img {
 	font-family: Helvetica;
 	font-size: 14px;
 	margin-top: -2em;
-	margin-left: 900px;
+	margin-left: 880px;
+}
+
+.comment-post {
+	all: unset;
+	position: relative;
+	width: 10%;
+	margin-left: 45%;
+	text-align: center;
+	color: rgba(66, 139, 202, 0.5) !important;
+}
+
+.comment-post:hover {
+	color: rgba(66, 139, 202, 1) !important;
 }
 
 .right-sidebar {
@@ -106,6 +128,7 @@ img {
 	top: 50;
 	position: absolute;
 }
+
 
 .right-sidebar ul {
 	list-style-type: none;
@@ -118,4 +141,16 @@ img {
 
 .login {
 	color: #428bca !important;
+}
+
+.arrow, .comments-p {
+	color: inherit !important;
+}
+
+.edit, .trash{
+	color: #aaa;
+}
+
+.edit:hover, .trash:hover {
+	color: #428bca;
 }

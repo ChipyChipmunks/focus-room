@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
 
+    <link rel="stylesheet" href="fonts/font-awesome-4.6.3/css/font-awesome.min.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -77,7 +79,7 @@
     </div>
 
         <div id="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
+          <h1 class="page-header">Overview</h1>
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
@@ -94,101 +96,45 @@
                   $image = "http://placehold.it/100/100/";
 
                   ?>
-                  <?php
-                  class Post {
-
-                    var $id, $owner_id;
-                    var $created, $edited;
-                    var $title, $content;
-
-                    public function __construct($_id, $_title, $_content, $_owner_id) {
-                      $id = $_id;
-                      $created = date_timestamp_get();
-                      $edited = date_timestamp_get();
-                      $title = $_title;
-                      $content = $_content;
-                      $owner_id = $_owner_id;
-                    }
-
-                    public function id(){
-                      if ($id != null){
-                        return $id;
-                      }
-                      else {
-                        return 'error 404';
-                      }
-                    }
-
-                    public function created(){
-                      if ($created != null){
-                        return $created;
-                      }
-                      else {
-                        return 'error 404';
-                      }
-                    }
-
-                    public function edited(){
-                      if ($edited != null){
-                        return $edited;
-                      }
-                      else {
-                        return 'error 404';
-                      }
-                    }
-
-                    public function title(){
-                      if ($title != null){
-                        return $title;
-                      }
-                      else {
-                        return 'error 404';
-                      }
-                    }
-
-                    public function content(){
-                      if ($content != null){
-                        return $content;
-                      }
-                      else {
-                        return 'error 404';
-                      }
-                    }
-
-                    public function owner_id(){
-                      if ($owner_id != null){
-                        return $owner_id;
-                      }
-                      else {
-                        return 'error 404';
-                      }
-                    }
-
-                    public function toString(){
-                      return $id . ' ' . $created . ' ' . $edited . ' ' . $title . ' ' . $content . ' ' . $owner_id;
-                    }
-
-                  }
-                  ?>
 
                 <?php 
 
-                  $post = new Post('0', 'title example', 'content example', '0');
-                  echo $post.toString();
+                 
+                  $username = "Liam O'Connor";
+                  $controls = 
+                    "\t\t"
+                    . "<i class='fa fa-pencil-square-o edit' class='post-controls' id='#$i' aria-hidden='true'></i>"
+                    . "\t"
+                    . "<i class='fa fa-trash-o trash' aria-hidden='true' class='post-controls' id='#$i'></i>";
+                    
 
                 ?>
 
                 <?php  for ($i = 0; $i < 5; $i++): ?>
                   <li class='post-card'>
+                  <p class="poster">
+                    <?=
+                      "$username "
+                      . "$controls"
+                    ?>
+                  </p>
+                      
                       <p><?=$message?></p>
                       <div class='actions-container'>
-                        <button class='edit-post'>Edit</button>
-                        <button class='delete-post'>Delete</button>
-                        <button class='comment-post' data-toggle='collapse' data-target='#<?=$i?>'>Comment</button>
+                        <button class='comment-post' data-toggle='collapse' data-target='#<?=$i?>'>
+                          <i class='fa fa-arrow-down arrow' aria-hidden='true'></i>
+                          <p class='comments-p'>comments</p>
+                        </button>
                     </div>
                     <div class='dropdown' id='<?=$i?>'>
 
                       <?php for ($j = 0; $j < rand(1, 5); $j++): ?>
+                        <p>
+                          <?=
+                            "$username "
+                            . "$controls"
+                          ?>
+                        </p>
                         <div class="comment-container">
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -218,7 +164,7 @@
 
               </ul>
             </div>
-            <div class="full-width">
+            <div class="full-width" id='submit-container'>
                 <textarea id="post-input" placeholder="Enter post..."></textarea>
                 <button id="submit">Submit</button>
               </div>
