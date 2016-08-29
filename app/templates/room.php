@@ -21,8 +21,8 @@
     <?php endif; ?>
 
     <?php foreach($posts as $post): ?>
-    	<h1><?= $post['post_name']?></h1>
-	<?php endforeach ?>
+    	<li class="room-list-item"> <a class="room-link" href="index.php?page=post&post_id=<?=$post['post_id']?>"><?=$post['post_name']?></a></li>
+	  <?php endforeach ?>
 
 	<form id='add-post' method="post">
 		<input type="text" name="post-name" maxlength="30" placeholder="Post name: "><br>

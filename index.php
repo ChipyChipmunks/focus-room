@@ -36,9 +36,13 @@
       require 'app/controllers/RoomController.php';
       $controller = new RoomController($dbc);
     break;
+
+    case 'post' :
+      require 'app/controllers/PostController.php';
+      $controller = new PostController($dbc);
+    break;
     
     default:
-
       require 'app/controllers/LandingController.php';
       $controller = new LandingController($dbc);
     break;
