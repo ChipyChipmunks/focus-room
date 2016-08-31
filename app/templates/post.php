@@ -21,7 +21,7 @@
 		<ul id="rooms-list">
 
 			<?php foreach ($comments as $comment): ?>
- 				<li class="room-list-item"> <p class="room-link"><?=$post['room_name']?></p></li>
+ 				<li class="room-list-item"> <p class="room-link"><?=$comment['comment_content']?></p></li>
 			<?php endforeach; ?>
 
 		</ul>

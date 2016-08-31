@@ -22,12 +22,13 @@
         	<p> <?= $emailMessage ?> </p>
         <?php endif; ?>
       	<input type="password" name="password" placeholder="Password:"><br><br>
-      	<input type="password" name="password-confirm" placeholder="Confirm password:"><br><br>
       	<?php if ( isset( $passwordMessage ) ) : ?>
         	<p> <?= $passwordMessage ?> </p>
         <?php endif; ?>
       	<br>
       	<input type="submit" class="button alert" name="new-account" value="Sign Up">
       </form>
+
+      <p>Already have an account? <a href="index.php?page=signin">Sign in</p>
 
     </div>

@@ -29,6 +29,8 @@ class PostController {
 
 		$data = [];
 
+		$data['comments'] = $this->getData();
+
 		echo $plates->render('post', $data);
 	}
 
@@ -38,7 +40,7 @@ class PostController {
 		 		FROM comments 
 		 		WHERE post_id = $this->post_id";
 
-		$result = $this->dbc->query($result);
+		$result = $this->dbc->query($sql);
 
 		return $result;
 

@@ -27,6 +27,11 @@
       $controller = new LandingController($dbc);
     break;
 
+    case 'signin' :
+      require 'app/controllers/SigninController.php';
+      $controller = new SigninController($dbc);
+    break;
+
     case 'rooms':
       require 'app/controllers/RoomsController.php';
       $controller = new RoomsController($dbc);

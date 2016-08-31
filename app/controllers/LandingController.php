@@ -14,8 +14,7 @@ class LandingController {
 		$this->dbc = $dbc;
 
 		if ( isset( $_POST['new-account'] ) ) {
-			// $this -> validateRegistrationForm();
-			header('Location: index.php?page=rooms');
+			$this -> validateRegistrationForm();
 		}
 
 	}
@@ -38,8 +37,6 @@ class LandingController {
 	}
 
 	private function validateRegistrationForm() {
-
-
 
 		$totalErrors = 0;
 
